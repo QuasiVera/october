@@ -57,3 +57,23 @@ void PrintArray(double[,] inArray)
         Console.WriteLine();
     }
 }
+
+
+//-----------------Проверка, существует ли элемент
+string CheckingIfElementExists(double[,] inArray, int row, int column)
+{
+    string result = string.Empty;
+    for (int i = 0; i < inArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < inArray.GetLength(1); j++)
+        {
+            if (i == row && j == column)
+            {
+                result = $"{row},{column} -> {inArray[i, j]}";
+                break;
+            }
+            //else result = $"элемента с позицией {row},{column} нет в массиве";
+        }
+    }
+    return result;
+}
