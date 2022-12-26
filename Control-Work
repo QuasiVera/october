@@ -1,0 +1,35 @@
+// See https://aka.ms/new-console-template for more information
+
+string [] inArray = {"wol", "foxx", "cow1", "go", "pig", "chicken", "me", "horse", "s", "bu"};
+string [] resultArray = ArrayOfLessThree(inArray);
+
+
+Console.Write("[");
+Console.Write($"{String.Join(", ", resultArray)}");
+Console.Write("]");
+
+
+//========================Методы
+
+string [] ArrayOfLessThree(string [] inArray)
+{
+    string [] tempArray = new string [inArray.Length];
+
+    int number = 0;
+    for(int i=0; i<inArray.Length; i++)
+    {
+            if(inArray[i].Length<=3)
+        {
+            tempArray[number] = inArray[i];
+            number++;
+        } 
+    }
+
+    string [] resultArray = new string [number];
+
+    for(int i =0; i<number; i++)
+    {
+    resultArray[i] = tempArray[i];
+    }
+    return resultArray;
+}
