@@ -1,0 +1,56 @@
+from random import randint
+x = randint(0,100)
+
+
+# Метод последовательного перебора
+count1 = 0
+for i in range(0,101):
+    count1+=1
+    if i == x:
+        #print("Число найдено,", i)
+        break
+        
+
+# print("Чтобы найти перебором число ", x, "понадобилось действий ", count1)
+
+
+# Метод случайного отгадывания
+count2=1
+y = randint(0,100)
+while x!=y:
+    y = randint(0,100)
+    count2+=1
+
+# print("Чтобы найти угадыванием число ", x, "понадобилось действий ", count2) 
+
+
+# Бинарный поиск ручной
+# count3 = 1
+# print("Угадай число от 0 до 100")
+# k = int(input('Введи число'))
+# while x !=k:
+#     if x<k: print("число меньше")
+#     else: print("число больше")
+#     k = int(input('Введи число'))
+#     count3+=1
+
+# print("Чтобы найти бинарным поиском число понадобилось действий ", count3)
+
+
+# Бинарный поиск ручной
+
+count4 = 1
+print("Угадай число от 0 до 100")
+left = 0
+right = 100
+k = (left + right)//2
+while x !=k:
+    print(k)
+    if x<k: right = k
+       
+    else: left=k
+    k= (left+right)//2
+    
+    count4+=1
+
+print("Чтобы найти бинарным поиском число", x, "понадобилось действий ", count4)
